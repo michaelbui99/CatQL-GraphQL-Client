@@ -3,7 +3,8 @@
   <metadata>
     <id>CatQL.GraphQL.Client</id>
     <version>1.0.0</version>
-    <authors>CatQLClient</authors>
+    <title>CatQL.GraphQL.Client</title>
+    <authors>Michael Bui</authors>
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
     <description>Simple GraphQL Client for making Queries and Mutations to a GraphQL endpoint</description>

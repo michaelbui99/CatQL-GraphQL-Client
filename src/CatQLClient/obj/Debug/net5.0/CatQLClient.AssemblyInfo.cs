@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("CatQLClient")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("Michael Bui")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyDescriptionAttribute("Simple GraphQL Client for making Queries and Mutations to a GraphQL endpoint")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
