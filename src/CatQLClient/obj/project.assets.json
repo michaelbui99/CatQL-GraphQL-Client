@@ -14,7 +14,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
-      "projectName": "CatQLClient",
+      "projectName": "CatQL.GraphQL.Client",
       "projectPath": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
       "packagesPath": "C:\\Users\\Shark\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\obj\\",

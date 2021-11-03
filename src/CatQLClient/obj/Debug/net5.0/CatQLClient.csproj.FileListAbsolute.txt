@@ -1,0 +1,12 @@
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\bin\Debug\net5.0\CatQLClient.deps.json
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\bin\Debug\net5.0\CatQLClient.dll
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\bin\Debug\net5.0\ref\CatQLClient.dll
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\bin\Debug\net5.0\CatQLClient.pdb
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.csproj.AssemblyReference.cache
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.AssemblyInfoInputs.cache
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.AssemblyInfo.cs
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.csproj.CoreCompileInputs.cache
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.dll
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\ref\CatQLClient.dll
+C:\Users\Shark\Documents\Coding\DotNet\CatQL-GraphQL-Client\src\CatQLClient\obj\Debug\net5.0\CatQLClient.pdb
