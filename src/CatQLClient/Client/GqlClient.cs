@@ -1,9 +1,12 @@
+/**/
+
 using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using CatQL.GraphQL.Helpers;
+using Newtonsoft.Json;
 
 namespace CatQL.GraphQL.Client
 {
@@ -24,7 +27,7 @@ namespace CatQL.GraphQL.Client
         public async Task<GqlRequestResponse<T>> PostQueryAsync<T>(GqlQuery query)
         {
             
-            string queryAsJson = JsonSerializer.Serialize(query, new JsonSerializerOptions(){PropertyNamingPolicy = JsonNamingPolicy.CamelCase});
+            string queryAsJson = JsonConvert.SerializeObject(query); 
             string queryasJsonWithNoWhiteSpace = WhiteSpaceRemover.RemoveWhiteSpace(queryAsJson);
             StringContent payload = new StringContent(queryasJsonWithNoWhiteSpace, Encoding.UTF8, "application/json");
             HttpResponseMessage responseMessage = await Client.PostAsync(_url, payload);
@@ -34,7 +37,7 @@ namespace CatQL.GraphQL.Client
             }
 
             string responseAsJson = await responseMessage.Content.ReadAsStringAsync();
-            return new GqlRequestResponse<T> { Data = JsonSerializer.Deserialize<T>(responseAsJson, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }) };
+            return new GqlRequestResponse<T> { Data = System.Text.Json.JsonSerializer.Deserialize<T>(responseAsJson, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }) };
         }
     }
 }
