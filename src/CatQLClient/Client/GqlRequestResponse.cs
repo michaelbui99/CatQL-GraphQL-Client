@@ -1,8 +1,8 @@
 namespace CatQL.GraphQL.Client
 {
-    public class GqlRequestResponse
+    public class GqlRequestResponse<T>
     {
-        public Object<T> Data { get; set; }
+        public T Data { get; set; }
         
     }
 }

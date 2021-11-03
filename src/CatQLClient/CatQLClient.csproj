@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <PackageId>CatQL.GraphQL.Client</PackageId>
+    <Author>Michael Bui</Author>
+    <Description>Simple GraphQL Client for making Queries and Mutations to a GraphQL endpoint</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>GraphQL, GraphQL-Client, Client</PackageTags>
+    <RepositoryUrl>https://github.com/michaelbui99/CatQL-GraphQL-Client</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
