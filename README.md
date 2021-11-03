@@ -4,7 +4,7 @@ Simple GraphQL Client for .NET
 ## Add to project
 
 ```dotnetcli
-dotnet add package CatQL.GraphQL.Client --version 1.0.0
+dotnet add package CatQL.GraphQL.Client --version 1.0.1
 ```
 
 ## Usage: 
