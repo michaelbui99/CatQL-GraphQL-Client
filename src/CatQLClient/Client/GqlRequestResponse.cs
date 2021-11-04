@@ -5,7 +5,7 @@ namespace CatQL.GraphQL.Client
 {
     public class GqlRequestResponse<T>
     {
-        [JsonProperty("data")]
+        [JsonPropertyName("data")]
         public T Data { get; set; }
         
     }

@@ -7,6 +7,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using CatQL.GraphQL.Helpers;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace CatQL.GraphQL.Client
 {
@@ -20,6 +21,9 @@ namespace CatQL.GraphQL.Client
         /// Internal instance of <see cref="HttpClient"/> used for making HTTP requests to GraphQL endpoint.
         /// </summary>
         private static HttpClient Client = new HttpClient(); 
+        public bool EnableLogging { get; set; }
+        
+        
         public GqlClient(string Url)
         {
             _url = Url; 
@@ -29,6 +33,10 @@ namespace CatQL.GraphQL.Client
             
             string queryAsJson = JsonConvert.SerializeObject(query); 
             string queryasJsonWithNoWhiteSpace = WhiteSpaceRemover.RemoveWhiteSpace(queryAsJson);
+            if (EnableLogging)
+            {
+            System.Console.WriteLine($"Serializing Query: {queryAsJson}");
+            }
             StringContent payload = new StringContent(queryasJsonWithNoWhiteSpace, Encoding.UTF8, "application/json");
             HttpResponseMessage responseMessage = await Client.PostAsync(_url, payload);
             if (!responseMessage.IsSuccessStatusCode)
@@ -37,7 +45,19 @@ namespace CatQL.GraphQL.Client
             }
 
             string responseAsJson = await responseMessage.Content.ReadAsStringAsync();
-            return new GqlRequestResponse<T> { Data = System.Text.Json.JsonSerializer.Deserialize<T>(responseAsJson, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase }) };
+            if (EnableLogging)
+            {
+            System.Console.WriteLine($"Received Response: {responseAsJson}");
+            }
+            DefaultContractResolver contractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false }
+            };
+            if (EnableLogging)
+            {
+            System.Console.WriteLine("Deserializing Response...");
+            }
+            return new GqlRequestResponse<T> { Data = JsonConvert.DeserializeObject<T>(responseAsJson, new JsonSerializerSettings(){ContractResolver = contractResolver}) };
         }
     }
 }

@@ -4,7 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <PackageId>CatQL.GraphQL.Client</PackageId>
     <Title>CatQL.GraphQL.Client</Title>
-    <Version>1.0.1</Version>
+    <Version>1.1.0</Version>
     <Authors>Michael Bui</Authors>
     <Description>Simple GraphQL Client for making Queries and Mutations to a GraphQL endpoint</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>

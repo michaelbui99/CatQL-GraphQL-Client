@@ -51,7 +51,7 @@
     "C:\\Users\\Shark\\.nuget\\packages\\": {}
   },
   "project": {
-    "version": "1.0.1",
+    "version": "1.1.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
       "projectName": "CatQL.GraphQL.Client",
