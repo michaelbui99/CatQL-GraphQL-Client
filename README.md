@@ -15,7 +15,7 @@ dotnet add package CatQL.GraphQL.Client
 ```csharp
  GqlQuery query = new GqlQuery()
   {
-    Query = "query{Media(id: 15125, type:ANIME){id, bannerImage}}""
+    Query = "query{Media(id: 15125, type:ANIME){id, bannerImage}}"
   };
 
 ```
