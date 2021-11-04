@@ -57,7 +57,7 @@ namespace CatQL.GraphQL.Client
             {
             System.Console.WriteLine("Deserializing Response...");
             }
-            return new GqlRequestResponse<T> { Data = JsonConvert.DeserializeObject<T>(responseAsJson, new JsonSerializerSettings(){ContractResolver = contractResolver}) };
+            return JsonConvert.DeserializeObject<GqlRequestResponse<T>>(responseAsJson, new JsonSerializerSettings() { ContractResolver = contractResolver });
         }
     }
 }
