@@ -1,5 +1,6 @@
 # CatQL-GraphQL-Client
 Simple GraphQL Client for .NET
+Only versions 1.2.0+ works. 
 
 ## Add to project
 
