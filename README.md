@@ -41,17 +41,17 @@ public class ResponseType
   // Name of the class does not matter
   // Class must contain properties with the Return Type of the Query.
   // The property name must match the property type for deserialization to work. 
-            
+  // JsonProperty must be set to PropertyName (PascalCase)
   [Newtonsoft.Json.JsonProperty("Media")]
   public Media Media { get; set; }
-
-
  }
             
 public class Media
 {
   public int Id { get; set; }
   public string BannerImage { get; set; }
+}
+
 
   GqlClient client = new GqlClient("https://graphql.anilist.co"){EnableLogging = true}; 
   GqlQuery query = new GqlQuery()
