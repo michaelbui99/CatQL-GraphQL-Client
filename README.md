@@ -54,7 +54,7 @@ public class Media
 }
 
 
-  GqlClient client = new GqlClient("https://graphql.anilist.co"){EnableLogging = true}; 
+  GqlClient client = new GqlClient("https://graphql.anilist.co"){EnableLogging = true}; // Logging is optional 
   GqlQuery query = new GqlQuery()
   {
     Query = "query($id: Int){Media(id: $id, type:ANIME){id, bannerImage}}", Variables = "{id: 15125}"
