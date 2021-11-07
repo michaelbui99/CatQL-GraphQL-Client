@@ -27,7 +27,7 @@ dotnet add package CatQL.GraphQL.Client
  
   GqlQuery query = new GqlQuery()
   {
-    Query = "query($id: Int){Media(id: $id, type:ANIME){id, bannerImage}}", Variables = "{id: 15125}"
+    Query = "query($id: Int){Media(id: $id, type:ANIME){id, bannerImage}}", Variables = new{id = 15125}
   };
 
 
@@ -57,7 +57,7 @@ public class Media
   GqlClient client = new GqlClient("https://graphql.anilist.co"){EnableLogging = true}; // Logging is optional 
   GqlQuery query = new GqlQuery()
   {
-    Query = "query($id: Int){Media(id: $id, type:ANIME){id, bannerImage}}", Variables = "{id: 15125}"
+    Query = "query($id: Int){Media(id: $id, type:ANIME){id, bannerImage}}", Variables = new{id = 15125
   };
   GqlRequestResponse<ResponseType> response = await client.PostQueryAsync<ResponseType>(query);
   return response.Data.Media;
