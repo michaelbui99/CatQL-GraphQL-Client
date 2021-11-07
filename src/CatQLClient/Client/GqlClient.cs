@@ -35,7 +35,7 @@ namespace CatQL.GraphQL.Client
             string queryAsJsonWithNoWhiteSpace = WhiteSpaceRemover.RemoveWhiteSpace(queryAsJson);
             if (EnableLogging)
             {
-            System.Console.WriteLine($"Serializing Query: {query}");
+            System.Console.WriteLine($"Serializing Query: {queryAsJsonWithNoWhiteSpace}");
             }
             StringContent payload = new StringContent(queryAsJsonWithNoWhiteSpace, Encoding.UTF8, "application/json");
             HttpResponseMessage responseMessage = await Client.PostAsync(_url, payload);

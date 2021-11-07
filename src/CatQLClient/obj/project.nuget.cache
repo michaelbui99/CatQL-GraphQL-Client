@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "/aGQNHMBLOgfBoEMaHw+xDhToB6zFgYgDLZPLDQe9oM3pgEc++Y+ZFb12d9qSFft5VtvmDv0Q2oZAByuUZCjrw==",
+  "dgSpecHash": "pQA8STR/zq9kWU/DPhV0Egk5FAILUHb+Dzdio4gXU1B9MUFMDt3wXxtwwV/7w9wuB23AxmBuMzU3An8L8HqCgg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
   "expectedPackageFiles": [
