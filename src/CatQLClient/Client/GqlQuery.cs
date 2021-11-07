@@ -11,7 +11,7 @@ namespace CatQL.GraphQL.Client
         public string Query { get; set; }
         [JsonProperty("operationName", NullValueHandling =NullValueHandling.Ignore)]
         public string OperationName { get; set; }
-        [JsonProperty("variables", NullValueHandling =NullValueHandling.ig)]
+        [JsonProperty("variables", NullValueHandling =NullValueHandling.Ignore)]
         public string Variables { get; set; }
     }
 }
