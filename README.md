@@ -62,3 +62,30 @@ public class Media
   GqlRequestResponse<ResponseType> response = await client.PostQueryAsync<ResponseType>(query);
   return response.Data.Media;
 ```
+
+### Performing a Mutation:
+```csharp
+
+   public class CreateResidenceMutationResponseType
+    {
+        [JsonProperty("createResidence")]
+        public Residence CreateResidence { get; set; }
+        
+        public override string ToString(){
+            return JsonConvert.SerializeObject(this); 
+        }
+        
+    }
+
+  GqlClient client = new GqlClient(Url){EnableLogging=true};
+  GqlQuery residenceMutation = new GqlQuery()
+  {
+   Query = @"mutation($residenceInput: ResidenceInput){createResidence(residence: $residenceInput){id,address{id, zipCode, streetName, houseNumber, cityName, streetNumber,      zipCode},description,type,averageRating,isAvailable,pricePerNight,rules{id, description},facilities{id, name},imageUrl,}}",
+   Variables= new {residenceInput = residence}
+  };
+  var mutationResponse = await client.PostQueryAsync<CreateResidenceMutationResponseType>(residenceMutation);
+  System.Console.WriteLine($"{this} received: {mutationResponse.Data.CreateResidence}");
+
+  return mutationResponse.Data.CreateResidence;
+
+```
