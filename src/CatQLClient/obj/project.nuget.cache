@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ve0Wj6IG9nmsqsM8Rrn8vuIMXZ1V25ls0wWkiSqiiplp2bjQoNKnsPyuLlOnJgEVC53Ui8oJHrZK5OoZt4m4tA==",
+  "dgSpecHash": "/aGQNHMBLOgfBoEMaHw+xDhToB6zFgYgDLZPLDQe9oM3pgEc++Y+ZFb12d9qSFft5VtvmDv0Q2oZAByuUZCjrw==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
+  "projectFilePath": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shark\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],

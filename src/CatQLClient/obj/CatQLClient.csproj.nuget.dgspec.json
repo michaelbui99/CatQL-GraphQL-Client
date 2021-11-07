@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj": {}
+    "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj": {
-      "version": "1.2.0",
+    "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj": {
+      "version": "1.2.1",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
+        "projectUniqueName": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
         "projectName": "CatQL.GraphQL.Client",
-        "projectPath": "c:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
+        "projectPath": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\CatQLClient.csproj",
         "packagesPath": "C:\\Users\\Shark\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\obj\\",
+        "outputPath": "C:\\Users\\Shark\\Documents\\Coding\\DotNet\\CatQL-GraphQL-Client\\src\\CatQLClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
