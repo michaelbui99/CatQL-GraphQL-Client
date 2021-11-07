@@ -32,15 +32,20 @@ namespace CatQL.GraphQL.Client
         {
             
             string queryAsJson = JsonConvert.SerializeObject(query); 
-            string queryasJsonWithNoWhiteSpace = WhiteSpaceRemover.RemoveWhiteSpace(queryAsJson);
+            string queryAsJsonWithNoWhiteSpace = WhiteSpaceRemover.RemoveWhiteSpace(queryAsJson);
             if (EnableLogging)
             {
-            System.Console.WriteLine($"Serializing Query: {queryAsJson}");
+            System.Console.WriteLine($"Serializing Query: {query}");
             }
-            StringContent payload = new StringContent(queryasJsonWithNoWhiteSpace, Encoding.UTF8, "application/json");
+            StringContent payload = new StringContent(queryAsJsonWithNoWhiteSpace, Encoding.UTF8, "application/json");
             HttpResponseMessage responseMessage = await Client.PostAsync(_url, payload);
             if (!responseMessage.IsSuccessStatusCode)
             {
+                string errorResponseMessageAsJson = await responseMessage.Content.ReadAsStringAsync();
+                if(EnableLogging)
+                {
+                    System.Console.WriteLine($"Error response message: {errorResponseMessageAsJson}");
+                }
                 throw new Exception($"Error: ${responseMessage.StatusCode}"); 
             }
 
