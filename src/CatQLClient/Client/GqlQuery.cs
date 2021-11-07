@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
@@ -11,6 +12,6 @@ namespace CatQL.GraphQL.Client
         [JsonProperty("operationName", NullValueHandling =NullValueHandling.Ignore)]
         public string OperationName { get; set; }
         [JsonProperty("variables", NullValueHandling =NullValueHandling.Ignore)]
-        public string Variables { get; set; }
+        public Object Variables { get; set; }
     }
 }
