@@ -3,7 +3,6 @@
 using System;
 using System.Net.Http;
 using System.Text;
-using System.Text.Json;
 using System.Threading.Tasks;
 using CatQL.GraphQL.Helpers;
 using Newtonsoft.Json;
@@ -46,7 +45,6 @@ namespace CatQL.GraphQL.Client
                 {
                     System.Console.WriteLine($"Error response message: {errorResponseMessageAsJson}");
                 }
-                throw new Exception($"Error: ${responseMessage.StatusCode}"); 
             }
 
             string responseAsJson = await responseMessage.Content.ReadAsStringAsync();
