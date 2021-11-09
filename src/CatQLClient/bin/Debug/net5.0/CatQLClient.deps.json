@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v5.0": {
-      "CatQLClient/2.0.0": {
+      "CatQLClient/2.1.0": {
         "dependencies": {
           "Newtonsoft.Json": "13.0.1"
         },
@@ -25,7 +25,7 @@
     }
   },
   "libraries": {
-    "CatQLClient/2.0.0": {
+    "CatQLClient/2.1.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

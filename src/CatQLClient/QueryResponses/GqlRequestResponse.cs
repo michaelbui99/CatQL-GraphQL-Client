@@ -1,3 +1,4 @@
+using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
@@ -9,8 +10,12 @@ namespace CatQL.GraphQL.QueryResponses
     /// <typeparam name="T">Type of Data that is being queried</typeparam>
     public class GqlRequestResponse<T>
     {
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public T Data { get; set; }
+        [JsonProperty("errors")]
+        [DataMember(IsRequired =false)]
+        public object[] Errors { get; set; }
+        
         
     }
 }

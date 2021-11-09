@@ -42,6 +42,16 @@ namespace CatQL.GraphQL.Client
         {
             
             string queryAsJson = JsonConvert.SerializeObject(query); 
+              DefaultContractResolver contractResolver = new DefaultContractResolver
+            {
+                NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
+            };
+            JsonSerializerSettings jsonSettings = new JsonSerializerSettings
+            {
+                MissingMemberHandling = MissingMemberHandling.Ignore,
+                ContractResolver = contractResolver
+            };
+
             if (EnableLogging)
             {
             System.Console.WriteLine($"Serializing Query: {queryAsJson}");
@@ -51,11 +61,11 @@ namespace CatQL.GraphQL.Client
             if (!responseMessage.IsSuccessStatusCode)
             {
                 string errorResponseMessageAsJson = await responseMessage.Content.ReadAsStringAsync();
-                var errorResponseObject = JsonConvert.DeserializeObject<GqlRequestErrorResponse<T>>(errorResponseMessageAsJson);
+                var responseObject = JsonConvert.DeserializeObject<GqlRequestResponse<T>>(errorResponseMessageAsJson, jsonSettings);
                 if(EnableLogging)
                 {
                     System.Console.WriteLine($"Error response message: {errorResponseMessageAsJson}");
-                    return errorResponseObject; 
+                    System.Console.WriteLine($"Response Object: {JsonConvert.SerializeObject(responseObject)}");
                 }
             }
 
@@ -64,10 +74,7 @@ namespace CatQL.GraphQL.Client
             {
             System.Console.WriteLine($"Received Response: {responseAsJson}");
             }
-            DefaultContractResolver contractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false }
-            };
+          
             if (EnableLogging)
             {
             System.Console.WriteLine("Deserializing Response...");
