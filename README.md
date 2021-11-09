@@ -2,6 +2,12 @@
 Simple GraphQL Client for .NET
 Only versions 2.0.0+ works fully. 
 https://www.nuget.org/packages/CatQL.GraphQL.Client
+##### Table of Contents  
+[Creating Query - no variables](#query-simple)
+[Creating Query - with variables](#query-variables)
+[Sending a Query](#sending-query)
+[Performing a Mutation](#mutation)
+[Error handling example](#error)
 
 ## Add to project
 
@@ -12,7 +18,7 @@ dotnet add package CatQL.GraphQL.Client
 ## Usage: 
 
 
-### Creating Query with no Variables: 
+### <a href="#query-simple">Creating Query with no Variables: </a>
 ```csharp
  GqlQuery query = new GqlQuery()
   {
@@ -22,7 +28,7 @@ dotnet add package CatQL.GraphQL.Client
 ```
 
 
-### Creating Query with Variables: 
+### <a href="#query-variables">Creating Query with Variables: </> 
 
 ```csharp
  
@@ -34,7 +40,7 @@ dotnet add package CatQL.GraphQL.Client
 
 ```
 
-### Sending a Query:
+### <a href="#sending-query">Sending a Query: </a>
 
 ```csharp
 public class ResponseType
@@ -64,7 +70,7 @@ public class Media
   return response.Data.Media;
 ```
 
-### Performing a Mutation:
+### <a href="#mutation">Performing a Mutation: </a>
 ```csharp
 
    public class CreateResidenceMutationResponseType
@@ -91,7 +97,7 @@ public class Media
 
 ```
 
-### Error handling
+### <a href="#error">Error handling </a>
 ```csharp
   /* SAMPLE ERROR RESPONSE
   {"data":{"createResidence":null},
