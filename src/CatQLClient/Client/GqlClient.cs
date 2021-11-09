@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using CatQL.GraphQL.QueryResponses
+using CatQL.GraphQL.QueryResponses;
 using CatQLClient.QueryResponses;
 
 namespace CatQL.GraphQL.Client
