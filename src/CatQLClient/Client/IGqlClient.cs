@@ -1,4 +1,5 @@
 using System.Threading.Tasks;
+using CatQL.GraphQL.QueryResponses; 
 
 namespace CatQL.GraphQL.Client
 {
@@ -12,7 +13,13 @@ namespace CatQL.GraphQL.Client
      /// ResponseType class that must contain a property of the samet type that the Query returns
      /// and the Property name must be the same as the type. 
      /// </typeparam>
-     /// <returns>GqlRequstResponse object containing ResponseType deserialized from the JSON response</returns>
+     /// <returns>
+     /// <p>
+     /// GqlRequstResponse object containing ResponseType deserialized from the JSON response.
+     /// If an error was generated during the GraphQL request, then an <cref="GqlRequestErrorResponse"> is returned. 
+     /// GqlRequestErrorResponse is an subtype of <cref="GqlRequsetResponse">
+     /// </p>
+     /// </returns>
         Task<GqlRequestResponse<T>> PostQueryAsync<T>(GqlQuery query); 
     }
 }
