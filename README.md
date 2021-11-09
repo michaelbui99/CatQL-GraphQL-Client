@@ -18,7 +18,7 @@ dotnet add package CatQL.GraphQL.Client
 ## Usage: 
 
 <a name="query-simple"/>
-### Creating Query with no Variables: 
+Creating Query with no Variables: 
 
 ```csharp
  GqlQuery query = new GqlQuery()
@@ -29,7 +29,7 @@ dotnet add package CatQL.GraphQL.Client
 ```
 
 <a name="query-variables"/>
-### Creating Query with Variables:
+Creating Query with Variables:
 
 ```csharp
  
@@ -40,7 +40,7 @@ dotnet add package CatQL.GraphQL.Client
 
 ```
 <a name="sending-query"/>
-### Sending a Query: 
+Sending a Query: 
 
 ```csharp
 public class ResponseType
@@ -70,7 +70,7 @@ public class Media
   return response.Data.Media;
 ```
 <a name="mutation"/>
-### Performing a Mutation: 
+Performing a Mutation: 
 
 ```csharp
 
@@ -98,7 +98,7 @@ public class Media
 
 ```
 <a name="error"/>
-### Error handling: 
+Error handling: 
 
 ```csharp
   /* SAMPLE ERROR RESPONSE
