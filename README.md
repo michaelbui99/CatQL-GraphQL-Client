@@ -3,10 +3,10 @@ Simple GraphQL Client for .NET
 Only versions 2.0.0+ works fully. 
 https://www.nuget.org/packages/CatQL.GraphQL.Client
 ##### Table of Contents  
-[Creating Query - no variables](#query-simple)
-[Creating Query - with variables](#query-variables)
-[Sending a Query](#sending-query)
-[Performing a Mutation](#mutation)
+[Creating Query - no variables](#query-simple) <br>
+[Creating Query - with variables](#query-variables)<br>
+[Sending a Query](#sending-query)<br>
+[Performing a Mutation](#mutation)<br>
 [Error handling example](#error)
 
 ## Add to project
