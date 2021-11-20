@@ -49,7 +49,6 @@ public class ResponseType
   // Name of the class does not matter
   // Class must contain properties with the Return Type of the Query.
   // The property name must match name of the query for deserialization to work. 
-  // JsonProperty must be set to PropertyName (PascalCase)
   [Newtonsoft.Json.JsonProperty("Media")]
   public Media Media { get; set; }
  }
