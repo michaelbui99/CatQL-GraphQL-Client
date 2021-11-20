@@ -48,7 +48,7 @@ public class ResponseType
   // Must create a ResponseType class
   // Name of the class does not matter
   // Class must contain properties with the Return Type of the Query.
-  // The property name must match name of they query for deserialization to work. 
+  // The property name must match name of the query for deserialization to work. 
   // JsonProperty must be set to PropertyName (PascalCase)
   [Newtonsoft.Json.JsonProperty("Media")]
   public Media Media { get; set; }
@@ -73,15 +73,16 @@ public class Media
 Performing a Mutation: 
 
 ```csharp
+  // Must create a ResponseType class
+  // Name of the class does not matter
+  // Class must contain properties with the Return Type of the Query.
+  // The property name must match name of the query for deserialization to work. 
 
    public class CreateResidenceMutationResponseType
     {
         [JsonProperty("createResidence")]
         public Residence CreateResidence { get; set; }
         
-        public override string ToString(){
-            return JsonConvert.SerializeObject(this); 
-        }
         
     }
 
