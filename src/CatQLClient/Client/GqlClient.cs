@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using CatQL.GraphQL.QueryResponses;
-using CatQLClient.QueryResponses;
 using CatQL.GraphQL.Helpers;
 
 //TODO: Rewrite how logging is handled. 
