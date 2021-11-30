@@ -8,7 +8,9 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using CatQL.GraphQL.QueryResponses;
 using CatQLClient.QueryResponses;
+using CatQL.GraphQL.Helpers;
 
+//TODO: Rewrite how logging is handled. 
 namespace CatQL.GraphQL.Client
 {
     public class GqlClient : IGqlClient
@@ -20,29 +22,31 @@ namespace CatQL.GraphQL.Client
         /// <summary>
         /// Internal instance of <see cref="HttpClient"/> used for making HTTP requests to GraphQL endpoint.
         /// </summary>
-        private static HttpClient Client = new HttpClient(); 
+        private static HttpClient Client = new HttpClient();
         /// <summary>
         /// Enables some simple debugging messages with Console.WriteLine
         /// </summary>
         /// <value>True if logging should be enabled, else false.</value>
         public bool EnableLogging { get; set; }
-        
+
+
+
         /// <summary>
         /// Creates a new GqlClient instance.
         /// </summary>
         /// <param name="Url">The Url that the requests will target</param>
         public GqlClient(string Url)
         {
-            _url = Url; 
+            _url = Url;
         }
-        
+
         /// <inheritdoc />
-      
+
         public async Task<GqlRequestResponse<T>> PostQueryAsync<T>(GqlQuery query)
         {
-            
-            string queryAsJson = JsonConvert.SerializeObject(query); 
-              DefaultContractResolver contractResolver = new DefaultContractResolver
+
+            string queryAsJson = JsonConvert.SerializeObject(query);
+            DefaultContractResolver contractResolver = new DefaultContractResolver
             {
                 NamingStrategy = new CamelCaseNamingStrategy { OverrideSpecifiedNames = false },
             };
@@ -54,15 +58,16 @@ namespace CatQL.GraphQL.Client
 
             if (EnableLogging)
             {
-            System.Console.WriteLine($"Serializing Query: {queryAsJson}");
+                System.Console.WriteLine($"Serializing Query: {WhiteSpaceRemover.RemoveWhiteSpace(queryAsJson)}");
             }
+
             StringContent payload = new StringContent(queryAsJson, Encoding.UTF8, "application/json");
             HttpResponseMessage responseMessage = await Client.PostAsync(_url, payload);
             if (!responseMessage.IsSuccessStatusCode)
             {
                 string errorResponseMessageAsJson = await responseMessage.Content.ReadAsStringAsync();
                 var responseObject = JsonConvert.DeserializeObject<GqlRequestResponse<T>>(errorResponseMessageAsJson, jsonSettings);
-                if(EnableLogging)
+                if (EnableLogging)
                 {
                     System.Console.WriteLine($"Error response message: {errorResponseMessageAsJson}");
                     System.Console.WriteLine($"Response Object: {JsonConvert.SerializeObject(responseObject)}");
@@ -72,12 +77,12 @@ namespace CatQL.GraphQL.Client
             string responseAsJson = await responseMessage.Content.ReadAsStringAsync();
             if (EnableLogging)
             {
-            System.Console.WriteLine($"Received Response: {responseAsJson}");
+                System.Console.WriteLine($"Received Response: {responseAsJson}");
             }
-          
+
             if (EnableLogging)
             {
-            System.Console.WriteLine("Deserializing Response...");
+                System.Console.WriteLine("Deserializing Response...");
             }
             return JsonConvert.DeserializeObject<GqlRequestResponse<T>>(responseAsJson, new JsonSerializerSettings() { ContractResolver = contractResolver });
         }
